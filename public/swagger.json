@@ -1,0 +1,708 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"SaveUpdateResFood": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"price": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					},
+					"size": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"price",
+					"type",
+					"size",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqFood": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"price": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					},
+					"size": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"price",
+					"type",
+					"size"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqDeleteFood": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ResWaiter": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"contactNumber": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"fullName",
+					"contactNumber",
+					"email",
+					"password",
+					"address",
+					"description",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqWaiter": {
+				"properties": {
+					"fullName": {
+						"type": "string"
+					},
+					"contactNumber": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"fullName",
+					"contactNumber",
+					"email",
+					"password",
+					"address",
+					"description"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ResTable": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"tableNumber": {
+						"type": "string"
+					},
+					"totalPerson": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"tableNumber",
+					"totalPerson",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqTable": {
+				"properties": {
+					"tableNumber": {
+						"type": "string"
+					},
+					"totalPerson": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"tableNumber",
+					"totalPerson"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ResOrder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"waiterId": {
+						"type": "string"
+					},
+					"tableNumberId": {
+						"type": "string"
+					},
+					"foodId": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"contactNumber": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					},
+					"time": {
+						"type": "string"
+					},
+					"acceptORpending": {
+						"type": "string"
+					},
+					"totalBill": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"waiterId",
+					"tableNumberId",
+					"foodId",
+					"fullName",
+					"contactNumber",
+					"address",
+					"time",
+					"acceptORpending",
+					"totalBill",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqGetOrder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"time": {
+						"type": "string"
+					},
+					"acceptORpending": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"time",
+					"acceptORpending"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqLoginWaiter": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqOrder": {
+				"properties": {
+					"waiterId": {
+						"type": "string"
+					},
+					"tableNumberId": {
+						"type": "string"
+					},
+					"foodId": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"contactNumber": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					},
+					"totalBill": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"waiterId",
+					"tableNumberId",
+					"foodId",
+					"fullName",
+					"contactNumber",
+					"address",
+					"totalBill"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReqWaiterOrderById": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"api_key": {
+				"type": "apiKey",
+				"name": "admin_token",
+				"in": "header"
+			},
+			"jwt": {
+				"type": "http",
+				"scheme": "Bearer",
+				"name": "Authorization",
+				"in": "header"
+			}
+		}
+	},
+	"info": {
+		"title": "swaggerapis2",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/admin/add/food": {
+			"post": {
+				"operationId": "SaveFood",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResFood"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqFood"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/delete/food": {
+			"delete": {
+				"operationId": "DeleteFood",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResFood"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqDeleteFood"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/add/waiter": {
+			"post": {
+				"operationId": "SaveWaiter",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResWaiter"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqWaiter"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/add/table": {
+			"post": {
+				"operationId": "SaveTable",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResTable"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqTable"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/all/order": {
+			"get": {
+				"operationId": "AllOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResOrder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/admin/update/order": {
+			"put": {
+				"operationId": "OrderUpdate",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResOrder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqGetOrder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/all/waiter": {
+			"get": {
+				"operationId": "AllWaiter",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResWaiter"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/waiter/waiter/login": {
+			"post": {
+				"operationId": "LoginWaiterEmail",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResWaiter"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"waiter"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqLoginWaiter"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/waiter/add/order": {
+			"post": {
+				"operationId": "SaveOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResOrder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"waiter"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqOrder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/waiter/get/waiter-order": {
+			"post": {
+				"operationId": "WaiterOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ResOrder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"waiter"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReqWaiterOrderById"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
