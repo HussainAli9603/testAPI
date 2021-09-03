@@ -61,6 +61,16 @@ export class WaiterRoutes {
                 next(error)
             }
         })
+        
+        
+        this.router.get('/all/food', checkJwtToken, async (req, res, next) => {
+            try {
+                const allFood: any = await new WaiterController().allFood();
+                res.status(200).send({ Success: true, message: "Get All Food", AllFood: allFood });
+            } catch (error) {
+                next(error);
+            }
+        });
 
 
 
