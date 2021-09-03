@@ -17,7 +17,7 @@ export class WaiterRoutes {
     }
     routes() {
 
-        this.router.post('/add/order', async (req, res, next) => {
+        this.router.post('/add/order',checkJwtToken , async (req, res, next) => {
             try {
                 const getreqs: ReqOrder = req.body;
                 const Order: any = await new WaiterController().SaveOrder(getreqs);
@@ -27,7 +27,7 @@ export class WaiterRoutes {
             }
         });
 
-        this.router.post('/get/waiter-order', async (req, res, next) => {
+        this.router.post('/get/waiter-order',checkJwtToken , async (req, res, next) => {
             try {
                 const getReq: any = req.body;
                 console.log(getReq)
