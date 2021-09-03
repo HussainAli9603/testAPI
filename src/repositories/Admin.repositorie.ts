@@ -51,6 +51,9 @@ export class MainAdmin {
   getAllWaiter() {
     return WaiterSchema.find();
   }
+  getAllFood() {
+    return FoodSchema.find();
+  }
 
 
 }
