@@ -31,6 +31,12 @@ export class WaiterController {
         return <ResOrder>allwaiterorder;
     }
 
+    @Security("jwt")
+    @Get("/all/food")
+    async allFood(): Promise<SaveUpdateResFood> {
+        const allfood: any = await new MainAdmin().getAllFood();
+        return <SaveUpdateResFood>allfood;
+    }
 
 
 
