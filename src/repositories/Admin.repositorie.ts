@@ -6,7 +6,7 @@ import { OrderSchema } from '../model/order.model';
 import { IWaiter } from '../types/document/IWaiter';
 import { ITable } from '../types/document/ITable';
 import { IOrder } from '../types/document/IOrder';
-import { ReqWaiterOrderById } from '../types/request/Admin.request';
+import { ReqWaiterOrderById } from '../types/Request/Admin.request';
 
 export class MainAdmin {
   constructor() { }
