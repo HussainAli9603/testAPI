@@ -1,7 +1,7 @@
 import express from 'express';
 import { WaiterController } from '../controller/Waiter.controller';
-import { ResTable, ResWaiter, SaveUpdateResFood } from '../types/response/Admin.response';
-import { ReqOrder } from '../types/request/Admin.request';
+import { ResTable, ResWaiter, SaveUpdateResFood } from '../types/Response/Admin.response';
+import { ReqOrder } from '../types/Request/Admin.request';
 import CustomeError from '../utills/error';
 import * as bcrypt from 'bcrypt-nodejs';
 import * as jwt from 'jsonwebtoken';
