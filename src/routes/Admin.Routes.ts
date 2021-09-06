@@ -1,8 +1,8 @@
 import express from 'express';
 import { AdminController } from '../controller/Admin.controller';
 import { IFood } from '../types/document/IFood';
-import { ResTable, ResWaiter, SaveUpdateResFood } from '../types/response/Admin.response';
-import { ReqFood, ReqOrder, ReqTable, ReqWaiter, ReqWaiterOrderById } from '../types/request/Admin.request';
+import { ResTable, ResWaiter, SaveUpdateResFood } from '../types/Response/Admin.response';
+import { ReqFood, ReqOrder, ReqTable, ReqWaiter, ReqWaiterOrderById } from '../types/Request/Admin.request';
 import CustomeError from '../utills/error';
 import * as bcrypt from 'bcrypt-nodejs';
 import * as jwt from 'jsonwebtoken';
