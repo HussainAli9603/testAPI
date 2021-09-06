@@ -27,12 +27,16 @@ export class WaiterRoutes {
             }
         });
 
-        this.router.post('/get/waiter-order',checkJwtToken , async (req, res, next) => {
+        this.router.post('/get/waiter-order',checkJwtToken , async (req:any, res, next) => {
             try {
                 const getReq: any = req.body;
-                console.log(getReq)
+                 
                 const allwaiterOrder: any = await new WaiterController().waiterOrder(getReq);
-                res.status(200).send({ Success: true, message: "Get All Waiter Order", waiterOrder: allwaiterOrder });
+                if (req.user.email == allwaiterOrder[0].waiterId._id) {
+                    res.status(200).send({ Success: true, message: "Get All Waiter Order", waiterOrder: allwaiterOrder });
+                } else {
+                    res.status(404).send({ Success: false, message: "Waiter order is Not Access" });
+                }
             } catch (error) {
                 next(error);
             }
