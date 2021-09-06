@@ -32,11 +32,7 @@ export class WaiterRoutes {
                 const getReq: any = req.body;
                  
                 const allwaiterOrder: any = await new WaiterController().waiterOrder(getReq);
-                if (req.user.email == allwaiterOrder[0].waiterId._id) {
-                    res.status(200).send({ Success: true, message: "Get All Waiter Order", waiterOrder: allwaiterOrder });
-                } else {
-                    res.status(404).send({ Success: false, message: "Waiter order is Not Access" });
-                }
+                 res.status(200).send({ Success: true, message: "Get All Waiter Order", waiterOrder: allwaiterOrder });
             } catch (error) {
                 next(error);
             }
