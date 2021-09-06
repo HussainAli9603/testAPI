@@ -1,8 +1,8 @@
 import { MainAdmin } from '../repositories/Admin.repositorie';
 import CustomeError from '../utills/error';
 import { Get, Route, Tags, Post, Body, Path, Put, Delete, SuccessResponse, Security, Request } from "tsoa";
-import { ResWaiter, ResOrder,SaveUpdateResFood } from '../types/response/Admin.response';
-import { ReqOrder, ReqWaiterOrderById, ReqLoginWaiter } from '../types/request/Admin.request';
+import { ResWaiter, ResOrder,SaveUpdateResFood } from '../types/Response/Admin.response';
+import { ReqOrder, ReqWaiterOrderById, ReqLoginWaiter } from '../types/Request/Admin.request';
 import { IWaiter } from '../types/document/IWaiter';
 import { IOrder } from '../types/document/IOrder';
 
